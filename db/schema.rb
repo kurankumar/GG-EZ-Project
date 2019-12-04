@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 2019_12_03_153202) do
   create_table "games", force: :cascade do |t|
     t.string "name"
     t.string "image"
+    t.integer "genre_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -26,7 +27,8 @@ ActiveRecord::Schema.define(version: 2019_12_03_153202) do
   end
 
   create_table "scores", force: :cascade do |t|
-    t.string "points"
+    t.integer "points"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
