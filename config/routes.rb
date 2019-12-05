@@ -1,3 +1,10 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  namespace :api do
+    namespace :v1 do
+      resources :users, only: [:index, :show, :create]
+      resources :games, only: [:index, :show]
+      resources :genres, only: [:index, :show]
+      resources :scores, only: [:index, :show]
+    end
+  end
 end
